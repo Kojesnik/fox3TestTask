@@ -15,7 +15,7 @@ public class ChatController {
 
     @MessageMapping("/chat/sendMessage")
     public void sendMessage(@Payload ChatMessage chatMessage) {
-        simpMessagingTemplate.convertAndSend("/topic/public/" + chatMessage.getChannel(), chatMessage);
+        simpMessagingTemplate.convertAndSend("/channel/public/" + chatMessage.getChannel(), chatMessage);
     }
 
 }
